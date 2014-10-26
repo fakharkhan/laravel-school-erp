@@ -20,19 +20,27 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         'email',
         'username',
         'password',
-        'active'
+        'first_name',
+        'last_name',
+        'role',
+        'is_active'
     ];
 
 
     public static $rules = [
         'create'=>[
-            'email' => 'required|unique:users',
-            'fullname'              =>  'required|unique:users',//email must not be the same as username
+            'email' => 'Required|unique:users',
+            'username'              =>  'Required|unique:users',//email must not be the same as username
             'password'              =>  'Required|AlphaNum|Between:4,8|Confirmed', //matching password field must be named as 'password_confirmation' in form
             'password_confirmation' =>  'Required|AlphaNum|Between:4,8',
+            'first_name'              =>  'required',
+            'last_name'              =>  'required',
+            'role'              =>  'required',
         ],
         'update'=>[
-            'fullname'              =>  'required',
+            'first_name'              =>  'required',
+            'last_name'              =>  'required',
+            'role'              =>  'required',
         ]
     ];
 
