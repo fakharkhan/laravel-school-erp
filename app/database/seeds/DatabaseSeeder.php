@@ -17,8 +17,9 @@ class DatabaseSeeder extends Seeder {
         if(User::count()==0)
         {
             User::create(array(
-                'fullname'=>'Administrator',
-                'email'=>'admin@example.com',
+                'first_name'=>'Fakhar',
+                'last_name'=>'Khan',
+                'email'=>'fakhar@softpyramid.com',
                 'password' => '123456'));
         }
 	}
