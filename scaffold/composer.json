@@ -1,0 +1,27 @@
+{
+    "name": "softpyramid/scaffold-generator",
+    "license": "MIT",
+    "description": "Laravel 5 Scaffold Generator",
+    "keywords": [
+        "laravel",
+        "scaffold",
+        "scaffold generator",
+        "laravel scaffold generator"
+    ],
+    "authors": [
+        {
+            "name": "Fakhar Zaman Khan",
+            "email": "fakhar@softpyramid.com",
+            "homepage": "http://www.softpyramid.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "illuminate/support": "5.1.*|5.2.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Softpyramid\\ScaffoldGenerator\\": "src/"
+        }
+    }
+}

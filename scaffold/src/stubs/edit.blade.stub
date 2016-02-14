@@ -1,0 +1,38 @@
+@extends('layouts.app')
+@section('title','Edit %%modelName%%')
+@section('content')
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Edit %%modelName%%</div>
+                    <div class="panel-body">
+                       {!! Form::model($%%scaffoldNameSingular%%, [
+                               'method' => 'PATCH',
+                               'url' => ['%%routeGroup%%%%scaffoldName%%', $%%scaffoldNameSingular%%->id],
+                               'class' => 'form-horizontal'
+                           ]) !!}
+
+                           @include('%%scaffoldName%%._fields')
+
+                           <div class="form-group">
+                               <div class="col-sm-offset-3 col-sm-3">
+                                   {!! Form::submit('Update', ['class' => 'btn btn-primary']) !!}
+                                   <a href="{{ url('%%routeGroup%%%%scaffoldName%%') }}" class="btn btn-default">Cancel</a>
+                               </div>
+                           </div>
+                           {!! Form::close() !!}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+
+@section('script')
+<!--Page level scripts goes here -->
+<script>
+
+</script>
+
+@endsection

@@ -17,11 +17,16 @@
     },
     "autoload": {
         "classmap": [
-            "database"
+            "database",
+            "helpers"
         ],
         "psr-4": {
-            "App\\": "app/"
-        }
+            "App\\": "app/",
+            "Scaffold\\ScaffoldGenerator\\": "scaffold/src/"
+        },
+        "files" :[
+
+        ]
     },
     "autoload-dev": {
         "classmap": [

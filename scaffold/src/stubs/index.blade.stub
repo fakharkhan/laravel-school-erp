@@ -1,0 +1,57 @@
+@extends('layouts.app')
+@section('title','%%scaffoldNameCap%% List')
+@section('content')
+<div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading"> %%scaffoldNameCap%%
+                        <a href="{{ url('%%routeGroup%%%%scaffoldName%%/create') }}" class="pull-right btn btn-sm btn-primary">Add New %%modelName%%</a>
+                    </div>
+
+                    <div class="panel-body">
+                         <table class="table table-bordered table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>S.No</th>%%formHeadingHtml%%<th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {{-- */$x=0;/* --}}
+                                    @foreach($%%scaffoldName%% as $item)
+                                        {{-- */$x++;/* --}}
+                                        <tr>
+                                            <td>{{ $x }}</td>
+                                            %%formBodyHtml%%
+                                            <td>
+                                                <a href="{{ url('%%routeGroup%%%%scaffoldName%%/' . $item->id ) }}" class="btn btn-info btn-xs">View</a>
+                                                <a href="{{ url('%%routeGroup%%%%scaffoldName%%/' . $item->id . '/edit') }}" class="btn btn-primary btn-xs">Edit</a>
+                                                {!! Form::open([
+                                                    'method'=>'DELETE',
+                                                    'url' => ['%%routeGroup%%%%scaffoldName%%', $item->id],
+                                                    'style' => 'display:inline'
+                                                ]) !!}
+                                                    {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
+                                                {!! Form::close() !!}
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                                <div class="pagination"> {!! $%%scaffoldName%%->render() !!} </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@endsection
+
+@section('script')
+<!--Page level scripts goes here -->
+<script>
+
+</script>
+
+@endsection

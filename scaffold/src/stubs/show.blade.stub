@@ -1,0 +1,38 @@
+@extends('layouts.app')
+@section('title','%%scaffoldNameCap%% List')
+@section('content')
+<div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">%%modelName%%</div>
+                    <div class="panel-body">
+                         <div class="table-responsive">
+                             <table class="table table-bordered table-striped table-hover">
+                                 <thead>
+                                     <tr>
+                                         <th>ID.</th> %%formHeadingHtml%%
+                                     </tr>
+                                 </thead>
+                                 <tbody>
+                                     <tr>
+                                         <td>{{ $%%scaffoldNameSingular%%->id }}</td> %%formBodyHtml%%
+                                     </tr>
+                                 </tbody>
+                             </table>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+
+@section('script')
+<!--Page level scripts goes here -->
+<script>
+
+</script>
+
+@endsection
+
